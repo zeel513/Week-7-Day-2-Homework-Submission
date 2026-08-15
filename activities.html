@@ -62,65 +62,85 @@
                 to the table below:</p>
 
             <!-- Activities Table: Displays available activities at each cliff location -->
-            <table border="1">
-                <caption>Activities at the Cliffs</caption>
-                <!-- Table Header: Column titles for activities and cliff locations -->
-                <thead>
-                    <tr>
-                        <th>Activity</th>
-                        <th>West Cliff</th>
-                        <th>North Cliff</th>
-                        <th>East Cliff</th>
-                        <th>South Cliff</th>
-                    </tr>
-                </thead>
-                <!-- Table Body: Lists specific activities available at each cliff location -->
-                <tbody>
-                    <tr>
-                        <td>Hiking</td>
-                        <td>College Hikes</td>
-                        <td>Family Fun</td>
-                        <td>Treasure Trails</td>
-                        <td>Canyon Explorer</td>
-                    </tr>
-                    <tr>
-                        <td>Kayak</td>
-                        <td>Western Kayak Meetup</td>
-                        <td>Not Available</td>
-                        <td>Youth Kayaking</td>
-                        <td>Kayak Down</td>
-                    </tr>
-                    <tr>
-                        <td>Skydiving</td>
-                        <td>Seacliff Diving</td>
-                        <td>Sky is the limit</td>
-                        <td>Not Available</td>
-                        <td>Sky Diving for Beginners</td>
-                    </tr>
-                    <tr>
-                        <td>Biking</td>
-                        <td>Bicycle for One</td>
-                        <td>Not Available</td>
-                        <td>Bike Meetup Group</td>
-                        <td>Not Available</td>
-                    </tr>
-                    <tr>
-                        <td>Camping</td>
-                        <td>Youth Camp</td>
-                        <td>Rent a Tent</td>
-                        <td>Campground Adventure</td>
-                        <td>Sunset Camping</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped mb-0">
+                    <caption>Activities at the Cliffs</caption>
+                    <!-- Table Header: Column titles for activities and cliff locations -->
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>West Cliff</th>
+                            <th>North Cliff</th>
+                            <th>East Cliff</th>
+                            <th>South Cliff</th>
+                        </tr>
+                    </thead>
+                    <!-- Table Body: Lists specific activities available at each cliff location -->
+                    <tbody>
+                        <tr>
+                            <td>Hiking</td>
+                            <td>College Hikes</td>
+                            <td>Family Fun</td>
+                            <td>Treasure Trails</td>
+                            <td>Canyon Explorer</td>
+                        </tr>
+                        <tr>
+                            <td>Kayak</td>
+                            <td>Western Kayak Meetup</td>
+                            <td>Not Available</td>
+                            <td>Youth Kayaking</td>
+                            <td>Kayak Down</td>
+                        </tr>
+                        <tr>
+                            <td>Skydiving</td>
+                            <td>Seacliff Diving</td>
+                            <td>Sky is the limit</td>
+                            <td>Not Available</td>
+                            <td>Sky Diving for Beginners</td>
+                        </tr>
+                        <tr>
+                            <td>Biking</td>
+                            <td>Bicycle for One</td>
+                            <td>Not Available</td>
+                            <td>Bike Meetup Group</td>
+                            <td>Not Available</td>
+                        </tr>
+                        <tr>
+                            <td>Camping</td>
+                            <td>Youth Camp</td>
+                            <td>Rent a Tent</td>
+                            <td>Campground Adventure</td>
+                            <td>Sunset Camping</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div id="displaySelected">
                 <div id="result">
                     <h4>My selected activities to enquire:</h4>
                 </div>
                 <div id="sendinfo">
-                    <input type=""email" placeholder=""johndoe@gmail.com">
-                    <button> Get Info </button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#activityModal">Get Info</button>
+                </div>
+            </div>
+
+            <div class="modal fade" id="activityModal" tabindex="-1" role="dialog" aria-labelledby="activityModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="activityModalLabel">Selected Activities</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modalActivityList">No activity selected.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

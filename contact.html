@@ -63,52 +63,61 @@
         <strong>Email:</strong> info@greatcliffs.com
       </p>
 
-      <form action="/contact" method="post">
+      <form action="/contact" method="post" class="contact-form">
         <fieldset>
           <legend>CONTACT FORM</legend>
 
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="John Doe">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="John Doe">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="johndoe@gmail.com">
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="johndoe@gmail.com">
-          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="phone">Phone:</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="xxx-xxx-xxxx">
+            </div>
 
-          <div class="form-group">
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" placeholder="xxx-xxx-xxxx">
+            <div class="form-group col-md-6">
+              <label for="cliff">Which Cliff are you inquiring?</label>
+              <select id="cliff" name="cliff" class="custom-select">
+                <option value="west">West Cliff</option>
+                <option value="north">North Cliff</option>
+                <option value="east">East Cliff</option>
+                <option value="south">South Cliff</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group inline-group">
             <label>How should we contact you?</label>
-            <input type="radio" id="contact_email" name="contact_method" value="email" checked>
-            <label for="contact_email" class="light-label">Email</label>
-            <input type="radio" id="contact_phone" name="contact_method" value="phone">
-            <label for="contact_phone" class="light-label">Phone</label>
-          </div>
-
-          <div class="form-group inline-group">
-            <label for="cliff">Which Cliff are you inquiring?</label>
-            <select id="cliff" name="cliff">
-              <option value="west">West Cliff</option>
-              <option value="north">North Cliff</option>
-              <option value="east">East Cliff</option>
-              <option value="south">South Cliff</option>
-            </select>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="contact_email" name="contact_method" value="email" class="custom-control-input" checked>
+              <label class="custom-control-label" for="contact_email">Email</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="contact_phone" name="contact_method" value="phone" class="custom-control-input">
+              <label class="custom-control-label" for="contact_phone">Phone</label>
+            </div>
           </div>
 
           <div class="form-group">
             <label for="hear">How did you hear about us:</label>
-            <textarea id="hear" name="hear" rows="6"></textarea>
+            <textarea id="hear" name="hear" rows="6" class="form-control"></textarea>
           </div>
 
           <!-- Random Codes -->
-          <div class="randomcode">
-            <input type="text" id="randomcode" name="randomcode" placeholder="Enter characters">
-            <p id="codes"></p>
+          <div class="randomcode form-group">
+            <label for="randomcode">Security Code</label>
+            <input type="text" id="randomcode" name="randomcode" class="form-control" placeholder="Enter characters">
+            <p id="codes" class="mt-2 mb-0"></p>
           </div>
 
           <div class="submit-container">

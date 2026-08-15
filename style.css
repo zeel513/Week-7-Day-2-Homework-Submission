@@ -5,6 +5,7 @@ header {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    background-attachment: scroll;
 }
 #home header {
     background-image: url('images/cliff_ocean.jpg');
@@ -18,6 +19,20 @@ header {
 #cliffs header {
     background-image: url('images/week2/forest_cliff.jpg');
 }
+
+@media (max-width: 767px) {
+    header {
+        min-height: 180px;
+        background-position: center center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    header {
+        min-height: 220px;
+    }
+}
+
 .main-header {
     background-color: rgba(38, 41, 61, 0.7);
     width: 100%;
@@ -77,10 +92,17 @@ main h1, main h2 {
 }
 
 /* Activities Table */
+#activities .table-responsive {
+    margin-top: 1.5em;
+    border: 1px solid #cfd8b8;
+    border-radius: 0.25rem;
+}
+
 #activities table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 1.5em;
+    min-width: 700px;
+    margin-bottom: 0;
 }
 
 #activities table th,
@@ -88,6 +110,7 @@ main h1, main h2 {
     padding: 0.8em 1em;
     border: 1px solid #cfd8b8;
     text-align: center;
+    white-space: nowrap;
 }
 
 #activities table th {
@@ -110,32 +133,38 @@ main h1, main h2 {
 }
 
 #activities main #displaySelected {
-    visibility: hidden;
-    margin:0 auto;
-    width:600px;
+    visibility: visible;
+    margin: 2em auto 0;
+    max-width: 600px;
     border: 2px solid #9ed034;
-    padding:0.75em;
+    padding: 0.75em;
+    background-color: #f8fbeb;
 }
 
-#activities main #displaySelected #result, 
+#activities main #displaySelected #result,
 #activities main #displaySelected #sendinfo {
-    display:inline-block;
-    margin:0;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
 }
 
 #activities main #result {
     min-height: 50px;
     width: 300px;
-    padding:0;
+    padding: 0;
 }
 
 #activities main #result h4 {
-    margin-bottom:1em;
-    font-size:1.15em;
+    margin-bottom: 1em;
+    font-size: 1.15em;
 }
 
-#activities main #displaySelected #sendinfo input[type="email"] {
-    width: 200px;
+#activities main #result p {
+    margin-bottom: 0.5rem;
+}
+
+#activities main #displaySelected #sendinfo button {
+    margin-left: 0.75rem;
 }
 
 /* Home */
@@ -409,23 +438,27 @@ main p {
 }
 
 fieldset {
-    border: 2px solid #ecfab8; /* Matches the footer background color */
+    border: 2px solid #ecfab8;
     padding: 2em;
     margin-top: 1em;
 }
 
 legend {
-    color: #4288C3; /* Blue from the theme */
+    color: #4288C3;
     font-weight: bold;
     font-size: 0.9em;
     padding: 0 10px;
+}
+
+.contact-form {
+    max-width: 900px;
+    margin: 2em 0;
 }
 
 .form-group {
     margin-bottom: 1.2em;
 }
 
-/* Make standard labels stack above inputs */
 .form-group label {
     display: block;
     font-weight: bold;
@@ -433,23 +466,27 @@ legend {
     margin-bottom: 0.3em;
 }
 
-/* Input widths and styling */
 .form-group input[type="text"],
 .form-group input[type="email"],
-.form-group input[type="tel"] {
-    width: 60%;
-    padding: 0.4em;
+.form-group input[type="tel"],
+.form-group textarea,
+.form-group select,
+.contact-form .form-control,
+.contact-form .custom-select {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.6rem 0.75rem;
     border: 1px solid #ccc;
-}
-
-.form-group textarea {
-    width: 60%;
-    padding: 0.5em;
-    border: 1px solid #ccc;
+    border-radius: 0.25rem;
     font-family: Arial, sans-serif;
 }
 
-/* Handle groups where elements should stay side-by-side */
+.inline-group .custom-control {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 0.35rem;
+}
+
 .inline-group label {
     display: inline-block;
     margin-right: 10px;
@@ -464,36 +501,33 @@ legend {
     margin-right: 5px;
 }
 
-.inline-group select {
-    padding: 0.2em;
-}
-
-/* Align the submit button to the right of the textarea's width */
 .submit-container {
-    width: 60%; 
+    width: 100%;
     text-align: right;
     margin-top: 1em;
 }
 
-.submit-container input[type="submit"] {
-    background-color: #4288C3;
-    color: white;
-    border: none;
-    padding: 0.6em 2em;
-    font-weight: bold;
-    font-size: 1em;
-    cursor: pointer;
+.submit-container .btn {
+    min-width: 140px;
 }
 
-.submit-container input[type="submit"]:hover {
-    background-color: #336699;
-}
-
-.submit-container input[type="submit"]:disabled {
-    background-color: transparent;
-    color: #666;
-    border: 1px solid #999;
+.submit-container button:disabled {
+    opacity: 0.5;
     cursor: not-allowed;
+}
+
+@media (max-width: 767px) {
+    fieldset {
+        padding: 1.25em;
+    }
+
+    .submit-container {
+        text-align: center;
+    }
+
+    .contact-form {
+        margin: 1.5em 0;
+    }
 }
 
 /* Merged from styles.css: compatibility rules */
