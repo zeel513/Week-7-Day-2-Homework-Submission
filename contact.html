@@ -1,0 +1,161 @@
+<!-- HTML5 Document Declaration -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head Section: Contains metadata and page title -->
+
+<head>
+  <title>Great Cliffs of California</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="contact" onLoad="disableButton(true)">
+  <!-- Main Container: Wraps all page content -->
+  <div class="container">
+
+    <div class="main-header sticky-top">
+      <nav class="navbar navbar-expand-xl navbar-dark p-0">
+        <a class="navbar-brand logo mr-0" href="index.html">
+          <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
+        </a>
+        <button
+          class="navbar-toggler mr-3"
+          type="button"
+          data-toggle="collapse"
+          data-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse main-menu" id="mainNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="cliffs.html">Cliffs</a></li>
+            <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+            <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Header Section: Contains logo and main navigation menu -->
+    <header></header>
+
+    <!-- Main Content Section: Contains page title and informational content -->
+    <main>
+      <h1>Contacting Us</h1>
+      <p>You can drop by the visitors information center at the cliff site that you plan on visiting. They are open 7
+        days a week from 8:00AM to 5:00PM. You can also contact us directly if you need additional information about the
+        Cliffs, Hours of Operations, Facilities or questions about this site using one of the following:</p>
+
+      <p><strong>Phone:</strong> (800)GCLIFFS<br>
+        <strong>Email:</strong> info@greatcliffs.com
+      </p>
+
+      <form action="/contact" method="post">
+        <fieldset>
+          <legend>CONTACT FORM</legend>
+
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="johndoe@gmail.com">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="xxx-xxx-xxxx">
+          </div>
+
+          <div class="form-group inline-group">
+            <label>How should we contact you?</label>
+            <input type="radio" id="contact_email" name="contact_method" value="email" checked>
+            <label for="contact_email" class="light-label">Email</label>
+            <input type="radio" id="contact_phone" name="contact_method" value="phone">
+            <label for="contact_phone" class="light-label">Phone</label>
+          </div>
+
+          <div class="form-group inline-group">
+            <label for="cliff">Which Cliff are you inquiring?</label>
+            <select id="cliff" name="cliff">
+              <option value="west">West Cliff</option>
+              <option value="north">North Cliff</option>
+              <option value="east">East Cliff</option>
+              <option value="south">South Cliff</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hear">How did you hear about us:</label>
+            <textarea id="hear" name="hear" rows="6"></textarea>
+          </div>
+
+          <!-- Random Codes -->
+          <div class="randomcode">
+            <input type="text" id="randomcode" name="randomcode" placeholder="Enter characters">
+            <p id="codes"></p>
+          </div>
+
+          <div class="submit-container">
+            <button id="submit" type="submit" class="btn btn-primary">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i> Inquire
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <!-- Partners Section: Displays list of partner logos/images -->
+    <section>
+      <!-- Partner List: Contains logos for all vendor partners -->
+      <ul id="partners" class="container list-unstyled row mb-0">
+      </ul>
+    </section>
+
+    <!-- Footer Section: Contains copyright, social media links, and disclaimer -->
+    <footer>
+      <!-- Footer Content: Copyright and social media links -->
+      <div id="nondisclaimer">
+        <!-- Copyright Information -->
+        <div class="copy">
+          &copy; Copyright 2020 :: GreatCliffs.com
+        </div>
+        <!-- Social Media Links -->
+        <div class="social">
+          <a href="#">Facebook Image</a>
+          <a href="#">Instagram Image</a>
+          <a href="#">Twitter Image</a>
+        </div>
+      </div>
+
+      <!-- Disclaimer Section -->
+      <div id="disclaimer">
+        <p>This website is designed and created solely for educational purposes only at Westcliff University.
+          All contents are not intended for any commercial gain or use.</p>
+      </div>
+    </footer>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/site_scripts.js"></script>
+  <script src="js/randomcodes.js"></script>
+</body>
+
+</html>
